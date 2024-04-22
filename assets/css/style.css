@@ -1,7 +1,28 @@
 main{
     display: flex;
+    columns: 18em;
+}
+
+form{
+    border:2px solid black
 }
 
 section{
+    display:flex
     border: 2px solid black;
+}
+
+h1{
+    background-color: rgb(71, 71, 125);
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    color: azure;
+    text-align: center;
+    
+}
+
+button{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(16, 120, 211);
 }
