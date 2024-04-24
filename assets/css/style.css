@@ -1,59 +1,43 @@
-main{
-    display: flex;
-    columns: 18em;
-}
-
-form{
-    border:2px solid black
-    display:flex
-}
-
-section{
-    display:flex
-    border: 2px solid black;
-    
-}
-
-h1{
-    background-color: rgb(71, 71, 125);
-    font-size: xx-large;
-    font-family: 'Arial Black', Courier, monospace;
-    color: rgb(249, 251, 251);
-    text-align: center;
-    font-weight:600
-    
-}
-h2{
-    flex-direction: row;
-    font-size: x-large;
-    font-family: 'Arial Black', Courier, monospace;
-    color: rgb(7, 8, 8);
-    text-align: left;
-    line-height: 40px;
-}
-
-
-
-h3{
-    font-size: medium;
-    font-family: 'Arial Black', Courier, monospace;
-    color: rgb(7, 8, 8);
-    text-align: center;
-    text-align: left;
-    font-weight: 50
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body{
-    text-align:left;
-    font-size: medium;
+
 }
 
+header{
+    text-align: center;
+}
 
-input{
-    border-radius: 4px;
+main{
+  display: flex;  
+  padding: 15px;
+}
+
+main section, section div{
     border: 2px solid black;
+}
+
+.formContainer {
+    flex: 0 0 15%;
+}
+
+.weather{
+    flex: 0 0 80%; 
+}
+
+.current{
     padding: 10px;
-    width:200px;
-    height:75px
-    font-size: medium;
+}
+
+.future{
+    display: flex; 
+}
+
+.forecastCard{
+    margin: 10px;
+    width: 18% ;
+    padding: 10px
 }

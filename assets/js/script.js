@@ -1,6 +1,7 @@
 const apiKey = "7688aedded5c20ea0921f29c86a48422";
 const submit = document.getElementById("form");
 const currentDiv = document.getElementById("current");
+const futureElement = document.getElementById("future");
 
 function handleUserInput(event) {
   event.preventDefault();
@@ -12,12 +13,13 @@ function handleUserInput(event) {
 
 function getWeather(city) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      currentDiv.innerHTML = ''
       // console.log("CURRENT WEATHER", data);
       console.log(current, data);
 
@@ -28,12 +30,12 @@ function getWeather(city) {
       console.log(data);
 
       const cityName = document.createElement("h2");
-      const temperature = document.createElement("h3");
-      const humidity = document.createElement("h3");
-      const wind = document.createElement("h3");
+      const temperature = document.createElement("p");
+      const humidity = document.createElement("p");
+      const wind = document.createElement("p");
       const image = document.createElement("img");
 
-      cityName.textContent = data.name + date;
+      cityName.textContent = data.name + ' ' +date;
       temperature.textContent = data.main.temp;
       humidity.textContent = data.main.humidity;
       wind.textContent = data.wind.speed;
@@ -45,22 +47,18 @@ function getWeather(city) {
       currentDiv.append(cityName, image, temperature, humidity, wind);
     });
 }
-// Convert temperature from Kelvin to Fahrenheit
-
-function farenheit(temp) {
-  var tempInFahrenheit = temp - 273.15 * 1.8 + 32;
-  return tempInFahrenheit;
-}
 
 function getForecast(city) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log("FORECAST", data.list);
+      
+      futureElement.innerHTML = ''
       for (let i = 3; i < data.list.length; i += 8) {
         const element = data.list[i];
         console.log(element);
@@ -70,31 +68,33 @@ function getForecast(city) {
         console.log(data);
 
         // create the elements for date,icon, temp, humidty, wind
+        const div = document.createElement("div");
         const dt = document.createElement("h3");
         const image = document.createElement("img");
-        const temperature = document.createElement("h3");
-        const humidity = document.createElement("h3");
-        const wind = document.createElement("h3");
+        const temperature = document.createElement("p");
+        const humidity = document.createElement("p");
+        const wind = document.createElement("p");
         console.log(data);
 
+        div.setAttribute('class', 'forecastCard')
+
         // add the info to the elements
-        date.textContent = date;
-        temperature.textContent = farenheit(data.list[0].main.temp);
-        humidity.textContent = data.list[0].main.humidity;
-        wind.textContent = data.list[0].wind.speed;
+        dt.textContent = date;
+        temperature.textContent = 'Temp: ' + element.main.temp ;
+        humidity.textContent = element.main.humidity;
+        wind.textContent = element.wind.speed;
         image.setAttribute(
           "src",
           "http://openweathermap.org/img/w/" +
-            data.list[0].weather[0].icon +
+            element.weather[0].icon +
             ".png"
         );
 
         // append the elements to the div
-        currentDiv.append(date, image, temperature, humidity, wind);
+        div.append(dt, image, temperature, humidity, wind);
 
         // append the div to the element with the id future
-        const futureElement = document.getElementById("future");
-        futureElement.appendChild(currentDiv);
+        futureElement.appendChild(div);
       }
     });
 }
