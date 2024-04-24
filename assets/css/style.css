@@ -5,24 +5,55 @@ main{
 
 form{
     border:2px solid black
+    display:flex
 }
 
 section{
     display:flex
     border: 2px solid black;
+    
 }
 
 h1{
     background-color: rgb(71, 71, 125);
     font-size: xx-large;
-    font-family: 'Courier New', Courier, monospace;
-    color: azure;
+    font-family: 'Arial Black', Courier, monospace;
+    color: rgb(249, 251, 251);
     text-align: center;
+    font-weight:600
     
 }
+h2{
+    flex-direction: row;
+    font-size: x-large;
+    font-family: 'Arial Black', Courier, monospace;
+    color: rgb(7, 8, 8);
+    text-align: left;
+    line-height: 40px;
+}
 
-button{
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(16, 120, 211);
+
+
+h3{
+    font-size: medium;
+    font-family: 'Arial Black', Courier, monospace;
+    color: rgb(7, 8, 8);
+    text-align: center;
+    text-align: left;
+    font-weight: 50
+}
+
+body{
+    text-align:left;
+    font-size: medium;
+}
+
+
+input{
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 10px;
+    width:200px;
+    height:75px
+    font-size: medium;
 }
