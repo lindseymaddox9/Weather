@@ -6,6 +6,7 @@ When I click on city in the search history then you again should receive current
 
 Technologies used-JavaScript ES 13 ,CSS 3, and HTML 5
 Usage: learning how to showcase skills with API
-Credits: Collaboration with Jose Lopez, MD, W3 schools
+Credits: Collaboration with Jose Lopez, MD, W3 schools and Open Weather Map for API's
 Liscense-MIT in repo
 
+[A full size screen shot of application chrome_Bootcamp24_Weather_index.html.png]
