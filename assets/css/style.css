@@ -1,19 +1,24 @@
 * {
     margin: 0;
     padding: 0;
+    font-weight: bold;
+}
+p{
+    
 }
 
-body{
-
-}
 
 header{
     text-align: center;
+    font-size: xx-large;
+    font-family:Arial, Helvetica, sans-serif;
+    color: midnightblue;
 }
 
 main{
   display: flex;  
   padding: 15px;
+  font-weight: bold;
 }
 
 main section, section div{
@@ -40,4 +45,45 @@ main section, section div{
     margin: 10px;
     width: 18% ;
     padding: 10px
+    border: 5px solid #1C6EA4;
+    text-align: center;
 }
+
+#searchHistory {
+    display: flex;
+    flex-direction: column;
+}
+
+.hbutton {
+    width: 120px;
+    margin: 6px;
+    color: rgb(176, 75, 4);
+    font-weight: bold;   
+}
+h2{
+    color: midnightblue;
+    text-align: center;
+    font-size: x-large;
+    font-family:Helvetica;
+}
+
+form{
+    text-align: center;  
+}
+
+input{
+    text-align: center;
+    width: 120px;
+    margin:5px
+}
+  @media screen and (max-width: 576px) {
+    .forecastCard {
+      background-color: #9b9293;
+    } 
+    }
+ @media screen and (max-width: 576px) {
+    .future{
+      flex-direction: column;
+      font-size:10px;
+    }
+    }
